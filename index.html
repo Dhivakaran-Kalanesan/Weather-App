@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="images/weatherIcon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <header class="container text-center pt-4 ">
+        <h1 class="text-dark head">Weather Forecast App</h1>
+    </header>
+    <div class="inputSection container d-flex flex-row justify-content-center align-items-center py-3">
+        <div class="city_input_form bg-light py-2 px-4">
+            <input type="text" name="cityName" id="inputCity" class="inputCity" placeholder="Search City">
+            <button class="btn btn-warning" onclick="searchCity()"><i class="fa-solid fa-search px-2"></i></button>
+        </div>
+
+    </div>
+
+    <div class="text-center pt-1">
+        <h3 class="head city_name" id="city_name">.........</h3>
+    </div>
+    <div class="container pt-4">
+
+        <div class="weatherContainer d-flex flex-row">
+
+            <div class="WeatherData text-white-50">
+                <div class="titleContainer d-flex flex-column text-light ">
+
+                    <h5>Date</h5>
+                    <h5>Time</h5>
+                    <h5>Condition</h5>
+                    <h5>Weather</h5>
+                    <h5>Temp</h5>
+                    <h5>Feels Like</h5>
+                    <h5>Humidity</h5>
+                    <h5>Wind Speed</h5>
+                </div>
+                <div class="titleContainerafter"></div>
+                <div id="one" class="d-flex flex-column text-center">
+                    <h5 id="date" class="text-warning">......</h5>
+                    <h5 id="time">......</h5>
+                    <img id="weatherIcon" src="" width="30">
+                    <h5 id="weather">.....</h5>
+                    <h5 id="temp">.....</h5>
+                    <h5 id="fLike">.....</h5>
+                    <h5 id="humidity">.....</h5>
+                    <h5 id="wind">.....</h5>
+                </div>
+                <div id="two" class="d-flex flex-column text-center">
+                    <h5 id="date1" class="text-warning">......</h5>
+                    <h5 id="time1">......</h5>
+                    <img id="weatherIcon1" src="" width="30">
+                    <h5 id="weather1">.....</h5>
+                    <h5 id="temp1">.....</h5>
+                    <h5 id="fLike1">.....</h5>
+                    <h5 id="humidity1">.....</h5>
+                    <h5 id="wind1">.....</h5>
+                </div>
+                <div id="three" class="d-flex flex-column text-center">
+                    <h5 id="date2" class="text-warning">......</h5>
+                    <h5 id="time2">......</h5>
+                    <img id="weatherIcon2" src="" width="30">
+                    <h5 id="weather2">.....</h5>
+                    <h5 id="temp2">.....</h5>
+                    <h5 id="fLike2">.....</h5>
+                    <h5 id="humidity2">.....</h5>
+                    <h5 id="wind2">.....</h5>
+                </div>
+                <div id="four" class="d-flex flex-column text-center">
+                    <h5 id="date3" class="text-warning">......</h5>
+                    <h5 id="time3">......</h5>
+                    <img id="weatherIcon3" src="" width="30">
+                    <h5 id="weather3">.....</h5>
+                    <h5 id="temp3">.....</h5>
+                    <h5 id="fLike3">.....</h5>
+                    <h5 id="humidity3">.....</h5>
+                    <h5 id="wind3">.....</h5>
+                </div>
+                <div id="five" class="d-flex flex-column text-center">
+                    <h5 id="date4" class="text-warning">......</h5>
+                    <h5 id="time4">......</h5>
+                    <img id="weatherIcon4" src="" width="30">
+                    <h5 id="weather4">.....</h5>
+                    <h5 id="temp4">.....</h5>
+                    <h5 id="fLike4">.....</h5>
+                    <h5 id="humidity4">.....</h5>
+                    <h5 id="wind4">.....</h5>
+                </div>
+                <div id="six" class="d-flex flex-column text-center">
+                    <h5 id="date5" class="text-warning">......</h5>
+                    <h5 id="time5">......</h5>
+                    <img id="weatherIcon5" src="" width="30">
+                    <h5 id="weather5">.....</h5>
+                    <h5 id="temp5">.....</h5>
+                    <h5 id="fLike5">.....</h5>
+                    <h5 id="humidity5">.....</h5>
+                    <h5 id="wind5">.....</h5>
+                </div>
+                <div id="seven" class="d-flex flex-column text-center">
+                    <h5 id="date6" class="text-warning">......</h5>
+                    <h5 id="time6">......</h5>
+                    <img id="weatherIcon6" src="" width="30">
+                    <h5 id="weather6">.....</h5>
+                    <h5 id="temp6">.....</h5>
+                    <h5 id="fLike6">.....</h5>
+                    <h5 id="humidity6">.....</h5>
+                    <h5 id="wind6">.....</h5>
+                </div>
+                <div id="eight" class="d-flex flex-column text-center">
+                    <h5 id="date7" class="text-warning">......</h5>
+                    <h5 id="time7">......</h5>
+                    <img id="weatherIcon7" src="" width="30">
+                    <h5 id="weather7">.....</h5>
+                    <h5 id="temp7">.....</h5>
+                    <h5 id="fLike7">.....</h5>
+                    <h5 id="humidity7">.....</h5>
+                    <h5 id="wind7">.....</h5>
+                </div>
+                <div id="nine" class="d-flex flex-column text-center">
+                    <h5 id="date8" class="text-warning">......</h5>
+                    <h5 id="time8">......</h5>
+                    <img id="weatherIcon8" src="" width="30">
+                    <h5 id="weather8">.....</h5>
+                    <h5 id="temp8">.....</h5>
+                    <h5 id="fLike8">.....</h5>
+                    <h5 id="humidity8">.....</h5>
+                    <h5 id="wind8">.....</h5>
+                </div>
+                <div id="ten" class="d-flex flex-column text-center">
+                    <h5 id="date9" class="text-warning">......</h5>
+                    <h5 id="time9">......</h5>
+                    <img id="weatherIcon9" src="" width="30">
+                    <h5 id="weather9">.....</h5>
+                    <h5 id="temp9">.....</h5>
+                    <h5 id="fLike9">.....</h5>
+                    <h5 id="humidity9">.....</h5>
+                    <h5 id="wind9">.....</h5>
+                </div>
+                <div id="11" class="d-flex flex-column text-center">
+                    <h5 id="date10" class="text-warning">......</h5>
+                    <h5 id="time10">......</h5>
+                    <img id="weatherIcon10" src="" width="30">
+                    <h5 id="weather10">.....</h5>
+                    <h5 id="temp10">.....</h5>
+                    <h5 id="fLike10">.....</h5>
+                    <h5 id="humidity10">.....</h5>
+                    <h5 id="wind10">.....</h5>
+                </div>
+                <div id="12" class="d-flex flex-column text-center">
+                    <h5 id="date11" class="text-warning">......</h5>
+                    <h5 id="time11">......</h5>
+                    <img id="weatherIcon11" src="" width="30">
+                    <h5 id="weather11">.....</h5>
+                    <h5 id="temp11">.....</h5>
+                    <h5 id="fLike11">.....</h5>
+                    <h5 id="humidity11">.....</h5>
+                    <h5 id="wind11">.....</h5>
+                </div>
+                <div id="13" class="d-flex flex-column text-center">
+                    <h5 id="date12" class="text-warning">......</h5>
+                    <h5 id="time12">......</h5>
+                    <img id="weatherIcon12" src="" width="30">
+                    <h5 id="weather12">.....</h5>
+                    <h5 id="temp12">.....</h5>
+                    <h5 id="fLike12">.....</h5>
+                    <h5 id="humidity12">.....</h5>
+                    <h5 id="wind12">.....</h5>
+                </div>
+                <div id="14" class="d-flex flex-column text-center">
+                    <h5 id="date13" class="text-warning">......</h5>
+                    <h5 id="time13">......</h5>
+                    <img id="weatherIcon13" src="" width="30">
+                    <h5 id="weather13">.....</h5>
+                    <h5 id="temp13">.....</h5>
+                    <h5 id="fLike13">.....</h5>
+                    <h5 id="humidity13">.....</h5>
+                    <h5 id="wind13">.....</h5>
+                </div>
+                <div id="15" class="d-flex flex-column text-center">
+                    <h5 id="date14" class="text-warning">......</h5>
+                    <h5 id="time14">......</h5>
+                    <img id="weatherIcon14" src="" width="30">
+                    <h5 id="weather14">.....</h5>
+                    <h5 id="temp14">.....</h5>
+                    <h5 id="fLike14">.....</h5>
+                    <h5 id="humidity14">.....</h5>
+                    <h5 id="wind14">.....</h5>
+                </div>
+                <div id="16" class="d-flex flex-column text-center">
+                    <h5 id="date15" class="text-warning">......</h5>
+                    <h5 id="time15">......</h5>
+                    <img id="weatherIcon15" src="" width="30">
+                    <h5 id="weather15">.....</h5>
+                    <h5 id="temp15">.....</h5>
+                    <h5 id="fLike15">.....</h5>
+                    <h5 id="humidity15">.....</h5>
+                    <h5 id="wind15">.....</h5>
+                </div>
+                <div id="17" class="d-flex flex-column text-center">
+                    <h5 id="date16" class="text-warning">......</h5>
+                    <h5 id="time16">......</h5>
+                    <img id="weatherIcon16" src="" width="30">
+                    <h5 id="weather16">.....</h5>
+                    <h5 id="temp16">.....</h5>
+                    <h5 id="fLike16">.....</h5>
+                    <h5 id="humidity16">.....</h5>
+                    <h5 id="wind16">.....</h5>
+                </div>
+                <div id="18" class="d-flex flex-column text-center">
+                    <h5 id="date17" class="text-warning">......</h5>
+                    <h5 id="time17">......</h5>
+                    <img id="weatherIcon17" src="" width="30">
+                    <h5 id="weather17">.....</h5>
+                    <h5 id="temp17">.....</h5>
+                    <h5 id="fLike17">.....</h5>
+                    <h5 id="humidity17">.....</h5>
+                    <h5 id="wind17">.....</h5>
+                </div>
+                <div id="19" class="d-flex flex-column text-center">
+                    <h5 id="date18" class="text-warning">......</h5>
+                    <h5 id="time18">......</h5>
+                    <img id="weatherIcon18" src="" width="30">
+                    <h5 id="weather18">.....</h5>
+                    <h5 id="temp18">.....</h5>
+                    <h5 id="fLike18">.....</h5>
+                    <h5 id="humidity18">.....</h5>
+                    <h5 id="wind18">.....</h5>
+                </div>
+                <div id="20" class="d-flex flex-column text-center">
+                    <h5 id="date19" class="text-warning">......</h5>
+                    <h5 id="time19">......</h5>
+                    <img id="weatherIcon19" src="" width="30">
+                    <h5 id="weather19">.....</h5>
+                    <h5 id="temp19">.....</h5>
+                    <h5 id="fLike19">.....</h5>
+                    <h5 id="humidity19">.....</h5>
+                    <h5 id="wind19">.....</h5>
+                </div>
+                <div id="21" class="d-flex flex-column text-center">
+                    <h5 id="date20" class="text-warning">......</h5>
+                    <h5 id="time20">......</h5>
+                    <img id="weatherIcon20" src="" width="30">
+                    <h5 id="weather20">.....</h5>
+                    <h5 id="temp20">.....</h5>
+                    <h5 id="fLike20">.....</h5>
+                    <h5 id="humidity20">.....</h5>
+                    <h5 id="wind20">.....</h5>
+                </div>
+                <div id="22" class="d-flex flex-column text-center">
+                    <h5 id="date21" class="text-warning">......</h5>
+                    <h5 id="time21">......</h5>
+                    <img id="weatherIcon21" src="" width="30">
+                    <h5 id="weather21">.....</h5>
+                    <h5 id="temp21">.....</h5>
+                    <h5 id="fLike21">.....</h5>
+                    <h5 id="humidity21">.....</h5>
+                    <h5 id="wind21">.....</h5>
+                </div>
+                <div id="23" class="d-flex flex-column text-center">
+                    <h5 id="date22" class="text-warning">......</h5>
+                    <h5 id="time22">......</h5>
+                    <img id="weatherIcon22" src="" width="30">
+                    <h5 id="weather22">.....</h5>
+                    <h5 id="temp22">.....</h5>
+                    <h5 id="fLike22">.....</h5>
+                    <h5 id="humidity22">.....</h5>
+                    <h5 id="wind22">.....</h5>
+                </div>
+                <div id="24" class="d-flex flex-column text-center">
+                    <h5 id="date23" class="text-warning">......</h5>
+                    <h5 id="time23">......</h5>
+                    <img id="weatherIcon23" src="" width="30">
+                    <h5 id="weather23">.....</h5>
+                    <h5 id="temp23">.....</h5>
+                    <h5 id="fLike23">.....</h5>
+                    <h5 id="humidity23">.....</h5>
+                    <h5 id="wind23">.....</h5>
+                </div>
+                <div id="25" class="d-flex flex-column text-center">
+                    <h5 id="date24" class="text-warning">......</h5>
+                    <h5 id="time24">......</h5>
+                    <img id="weatherIcon24" src="" width="30">
+                    <h5 id="weather24">.....</h5>
+                    <h5 id="temp24">.....</h5>
+                    <h5 id="fLike24">.....</h5>
+                    <h5 id="humidity24">.....</h5>
+                    <h5 id="wind24">.....</h5>
+                </div>
+                <div id="26" class="d-flex flex-column text-center">
+                    <h5 id="date25" class="text-warning">......</h5>
+                    <h5 id="time25">......</h5>
+                    <img id="weatherIcon25" src="" width="30">
+                    <h5 id="weather25">.....</h5>
+                    <h5 id="temp25">.....</h5>
+                    <h5 id="fLike25">.....</h5>
+                    <h5 id="humidity25">.....</h5>
+                    <h5 id="wind25">.....</h5>
+                </div>
+                <div id="27" class="d-flex flex-column text-center">
+                    <h5 id="date26" class="text-warning">......</h5>
+                    <h5 id="time26">......</h5>
+                    <img id="weatherIcon26" src="" width="30">
+                    <h5 id="weather26">.....</h5>
+                    <h5 id="temp26">.....</h5>
+                    <h5 id="fLike26">.....</h5>
+                    <h5 id="humidity26">.....</h5>
+                    <h5 id="wind26">.....</h5>
+                </div>
+                <div id="28" class="d-flex flex-column text-center">
+                    <h5 id="date27" class="text-warning">......</h5>
+                    <h5 id="time27">......</h5>
+                    <img id="weatherIcon27" src="" width="30">
+                    <h5 id="weather27">.....</h5>
+                    <h5 id="temp27">.....</h5>
+                    <h5 id="fLike27">.....</h5>
+                    <h5 id="humidity27">.....</h5>
+                    <h5 id="wind27">.....</h5>
+                </div>
+                <div id="29" class="d-flex flex-column text-center">
+                    <h5 id="date28" class="text-warning">......</h5>
+                    <h5 id="time28">......</h5>
+                    <img id="weatherIcon28" src="" width="30">
+                    <h5 id="weather28">.....</h5>
+                    <h5 id="temp28">.....</h5>
+                    <h5 id="fLike28">.....</h5>
+                    <h5 id="humidity28">.....</h5>
+                    <h5 id="wind28">.....</h5>
+                </div>
+                <div id="30" class="d-flex flex-column text-center">
+                    <h5 id="date29" class="text-warning">......</h5>
+                    <h5 id="time29">......</h5>
+                    <img id="weatherIcon29" src="" width="30">
+                    <h5 id="weather29">.....</h5>
+                    <h5 id="temp29">.....</h5>
+                    <h5 id="fLike29">.....</h5>
+                    <h5 id="humidity29">.....</h5>
+                    <h5 id="wind29">.....</h5>
+                </div>
+                <div id="31" class="d-flex flex-column text-center">
+                    <h5 id="date30" class="text-warning">......</h5>
+                    <h5 id="time30">......</h5>
+                    <img id="weatherIcon30" src="" width="30">
+                    <h5 id="weather30">.....</h5>
+                    <h5 id="temp30">.....</h5>
+                    <h5 id="fLike30">.....</h5>
+                    <h5 id="humidity30">.....</h5>
+                    <h5 id="wind30">.....</h5>
+                </div>
+                <div id="32" class="d-flex flex-column text-center">
+                    <h5 id="date31" class="text-warning">......</h5>
+                    <h5 id="time31">......</h5>
+                    <img id="weatherIcon31" src="" width="30">
+                    <h5 id="weather31">.....</h5>
+                    <h5 id="temp31">.....</h5>
+                    <h5 id="fLike31">.....</h5>
+                    <h5 id="humidity31">.....</h5>
+                    <h5 id="wind31">.....</h5>
+                </div>
+                <div id="33" class="d-flex flex-column text-center">
+                    <h5 id="date32" class="text-warning">......</h5>
+                    <h5 id="time32">......</h5>
+                    <img id="weatherIcon32" src="" width="30">
+                    <h5 id="weather32">.....</h5>
+                    <h5 id="temp32">.....</h5>
+                    <h5 id="fLike32">.....</h5>
+                    <h5 id="humidity32">.....</h5>
+                    <h5 id="wind32">.....</h5>
+                </div>
+                <div id="34" class="d-flex flex-column text-center">
+                    <h5 id="date33" class="text-warning">......</h5>
+                    <h5 id="time33">......</h5>
+                    <img id="weatherIcon33" src="" width="30">
+                    <h5 id="weather33">.....</h5>
+                    <h5 id="temp33">.....</h5>
+                    <h5 id="fLike33">.....</h5>
+                    <h5 id="humidity33">.....</h5>
+                    <h5 id="wind33">.....</h5>
+                </div>
+                <div id="35" class="d-flex flex-column text-center">
+                    <h5 id="date34" class="text-warning">......</h5>
+                    <h5 id="time34">......</h5>
+                    <img id="weatherIcon34" src="" width="30">
+                    <h5 id="weather34">.....</h5>
+                    <h5 id="temp34">.....</h5>
+                    <h5 id="fLike34">.....</h5>
+                    <h5 id="humidity34">.....</h5>
+                    <h5 id="wind34">.....</h5>
+                </div>
+                <div id="36" class="d-flex flex-column text-center">
+                    <h5 id="date35" class="text-warning">......</h5>
+                    <h5 id="time35">......</h5>
+                    <img id="weatherIcon35" src="" width="30">
+                    <h5 id="weather35">.....</h5>
+                    <h5 id="temp35">.....</h5>
+                    <h5 id="fLike35">.....</h5>
+                    <h5 id="humidity35">.....</h5>
+                    <h5 id="wind35">.....</h5>
+                </div>
+                <div id="37" class="d-flex flex-column text-center">
+                    <h5 id="date36" class="text-warning">......</h5>
+                    <h5 id="time36">......</h5>
+                    <img id="weatherIcon36" src="" width="30">
+                    <h5 id="weather36">.....</h5>
+                    <h5 id="temp36">.....</h5>
+                    <h5 id="fLike36">.....</h5>
+                    <h5 id="humidity36">.....</h5>
+                    <h5 id="wind36">.....</h5>
+                </div>
+                <div id="38" class="d-flex flex-column text-center">
+                    <h5 id="date37" class="text-warning">......</h5>
+                    <h5 id="time37">......</h5>
+                    <img id="weatherIcon37" src="" width="30">
+                    <h5 id="weather37">.....</h5>
+                    <h5 id="temp37">.....</h5>
+                    <h5 id="fLike37">.....</h5>
+                    <h5 id="humidity37">.....</h5>
+                    <h5 id="wind37">.....</h5>
+                </div>
+                <div id="39" class="d-flex flex-column text-center">
+                    <h5 id="date38" class="text-warning">......</h5>
+                    <h5 id="time38">......</h5>
+                    <img id="weatherIcon38" src="" width="30">
+                    <h5 id="weather38">.....</h5>
+                    <h5 id="temp38">.....</h5>
+                    <h5 id="fLike38">.....</h5>
+                    <h5 id="humidity38">.....</h5>
+                    <h5 id="wind38">.....</h5>
+                </div>
+                <div id="40" class="d-flex flex-column text-center">
+                    <h5 id="date39" class="text-warning">......</h5>
+                    <h5 id="time39">......</h5>
+                    <img id="weatherIcon39" src="" width="30">
+                    <h5 id="weather39">.....</h5>
+                    <h5 id="temp39">.....</h5>
+                    <h5 id="fLike39">.....</h5>
+                    <h5 id="humidity39">.....</h5>
+                    <h5 id="wind39">.....</h5>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
